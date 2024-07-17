@@ -1,1 +1,1 @@
-# groove-stocks
+# gr-stocks
