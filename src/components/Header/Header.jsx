@@ -1,6 +1,7 @@
 import React from "react";
 import Branding from "./Branding";
 import Icon from "./Icon";
+import SignInButton from "./SignInButton";
 
 const Header = ({ toggleSidebar }) => {
   return (
@@ -27,7 +28,7 @@ const Header = ({ toggleSidebar }) => {
         </div>
         <div className="items-center flex-shrink-0 hidden lg:flex">
           <div className="flex flex-col items-center justify-center">
-            <Icon />
+            <SignInButton />
           </div>
         </div>
       </div>
