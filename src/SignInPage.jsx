@@ -3,10 +3,10 @@ import glogo from "./assets/g-logo.png";
 
 const SignInPage = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#F0F5F8]">
-      <div className="max-w-[1040px] w-full h-[408px] bg-white p-[40px] rounded-3xl mb-16 shadow-sm">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-[#F0F5F8]">
+      <div className="max-w-[1040px] w-full h-[408px] bg-white p-[40px] mb-[12px] rounded-3xl shadow-sm">
         <div className="columns-2">
-          <img className="w-12 h-12" src={glogo}></img>
+          <img className="w-[45px] h-[45px]" src={glogo}></img>
           <h2
             style={{ fontFamily: "Roboto, sans-serif", fontWeight: 400 }}
             className="mt-4 text-[44px] font-extrabold text-gray-900 text-left"
@@ -64,6 +64,44 @@ const SignInPage = () => {
               </button>
             </div>
           </form>
+        </div>
+      </div>
+      <div className="flex justify-between items-center text-xs w-[1040px] pr-5 text-gray-800">
+        <div className="text-left ">
+          <label htmlFor="languageSelect" className="sr-only">
+            Language:
+          </label>
+          <select
+            id="languageSelect"
+            className=" bg-transparent cursor-pointer focus:cursor-pointer-up rounded-md w-[200px] h-[30px] px-3 hover:bg-gray-200"
+          >
+            <option>English (United States)</option>
+            <option>Español (España)</option>
+            <option>Français (France)</option>
+          </select>
+        </div>
+        <div className="flex space-x-6">
+          <a
+            href="https://support.google.com/accounts?hl=en&visit_id=638572757410068850-1555949334&rd=2&p=account_iph#topic=3382296"
+            target="_blank"
+            className="mx-2"
+          >
+            Help
+          </a>
+          <a
+            href="https://policies.google.com/privacy?gl=US&hl=en-US"
+            target="_blank"
+            className="mx-2"
+          >
+            Privacy
+          </a>
+          <a
+            href="https://policies.google.com/terms?gl=US&hl=en-US"
+            target="_blank"
+            className="mx-2"
+          >
+            Terms
+          </a>
         </div>
       </div>
     </div>
