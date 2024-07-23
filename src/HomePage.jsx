@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Header from "./components/Header/Header";
 import SideBar from "./components/SideBar";
+import Markets from "./components/MarketsSection/Markets";
 
 const HomePage = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -10,10 +11,13 @@ const HomePage = () => {
   };
 
   return (
-    <div>
+    <>
       <Header toggleSidebar={toggleSidebar} />
       {isSidebarOpen && <SideBar toggleSidebar={toggleSidebar} />}
-    </div>
+      <div className="flex flex-col items-center">
+        <Markets />
+      </div>
+    </>
   );
 };
 
