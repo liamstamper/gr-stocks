@@ -46,7 +46,7 @@ const MarketsCards = () => {
   ]);
 
   return (
-    <div className="flex space-x-2 flex-wrap mt-2 ml-[-12px]">
+    <div className="flex space-x-2 flex-wrap mt-2">
       {markets.map((market) => (
         <MarketCard
           key={market.id}
