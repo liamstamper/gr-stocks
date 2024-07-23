@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ExpandAllIcon from "../../assets/icons/expandall.png";
 import CollapseAllIcon from "../../assets/icons/collapseall.png";
+import MarketsCards from "./MarketsCards";
 
 const Markets = () => {
   const [activeMarket, setActiveMarket] = useState("US");
@@ -54,6 +55,7 @@ const Markets = () => {
           Stock Market News:
         </a>
       </div>
+      <MarketsCards />
     </div>
   );
 };
