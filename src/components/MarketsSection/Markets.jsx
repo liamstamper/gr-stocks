@@ -1,32 +1,58 @@
-import React from "react";
+import React, { useState } from "react";
 import ExpandAllIcon from "../../assets/icons/expandall.png";
+import CollapseAllIcon from "../../assets/icons/collapseall.png";
 
 const Markets = () => {
+  const [activeMarket, setActiveMarket] = useState("US");
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const handleMarketClick = (market) => {
+    setActiveMarket(market);
+  };
+
+  const handleExpandClick = () => {
+    setIsExpanded(!isExpanded);
+  };
+
+  const getButtonClasses = (market) =>
+    `text-sm rounded-full px-3 py-[2px] ml-2 ${
+      market === activeMarket
+        ? "text-blue-600 bg-blue-300 bg-opacity-20"
+        : "text-gray-600 hover:bg-gray-100"
+    }`;
+
   return (
     <div className="max-w-[1025px] flex flex-col w-full h-[90px] pt-[16px]">
       <div className="flex items-center space-x-2 text-xs">
-        <img className="h-3 w-3" src={ExpandAllIcon} alt="Expand All Icon" />
-        <button className="uppercase text-gray-600 tracking-wider font-semibold text-[11px]">
+        <button
+          className="uppercase text-gray-600 flex tracking-wider font-semibold text-[11px]"
+          onClick={handleExpandClick}
+        >
+          <img
+            className="h-4 w-4 mr-1"
+            src={isExpanded ? CollapseAllIcon : ExpandAllIcon}
+            alt={isExpanded ? "Collapse All Icon" : "Expand All Icon"}
+          />
           Compare Markets
         </button>
-        <button className="text-blue-700 ml-2 text-sm rounded-full bg-blue-300 bg-opacity-40 px-3 py-1">
-          Futures
-        </button>
-        <button className="text-gray-600 ml-2 text-sm rounded-full active:text-blue-700 hover:bg-blue-300 bg-opacity-40 px-3 py-1">
-          US
-        </button>
-        <button className="text-gray-600 ml-2 text-sm rounded-full active:text-blue-700 hover:bg-blue-300 bg-opacity-40 px-3 py-1">
-          Europe
-        </button>
-        <button className="text-gray-600 ml-2 text-sm rounded-full active:text-blue-700 hover:bg-blue-300 bg-opacity-40 px-3 py-1">
-          Asia
-        </button>
-        <button className="text-gray-600 ml-2 text-sm rounded-full active:text-blue-700 hover:bg-blue-300 bg-opacity-40 px-3 py-1">
-          Currencies
-        </button>
-        <button className="text-gray-600 ml-2 text-sm rounded-full active:text-blue-700 hover:bg-blue-300 bg-opacity-40 px-3 py-1">
-          Crypto
-        </button>
+        {["US", "Europe", "Asia", "Currencies", "Crypto", "Futures"].map(
+          (market) => (
+            <button
+              key={market}
+              className={getButtonClasses(market)}
+              onClick={() => handleMarketClick(market)}
+            >
+              {market}
+            </button>
+          )
+        )}
+        <div className="border-l-2 border-gray-400 h-5 ml-2 pr-3"></div>
+        <a
+          className="text-sm text-gray-800 font-semibold text-[13px] hover:underline"
+          href="#"
+        >
+          Stock Market News:
+        </a>
       </div>
     </div>
   );
