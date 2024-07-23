@@ -6,7 +6,7 @@ const MarketCard = ({ name, percentage, priceChange, currentPrice, isUp }) => {
   return (
     <div className="bg-white border border-gray-200 rounded-lg p-[6px] flex flex-row items-center">
       <div
-        className={`pt-2 pb-2 pl-2 pr-2 rounded-lg bg-opacity-50 ${
+        className={`p-2 rounded-lg bg-opacity-50 ${
           isUp ? "bg-green-200" : "bg-red-200"
         } self-center flex justify-center items-center`}
       >
