@@ -21,7 +21,9 @@ const MarketCard = ({ name, percentage, priceChange, currentPrice, isUp }) => {
         <div className="flex flex-row items-center">
           <div className="text-gray-800 font-bold text-xs mr-2">{name}</div>
           <div
-            className={`text-xs ${isUp ? "text-green-500" : "text-red-500"}`}
+            className={`text-xs text-right ${
+              isUp ? "text-green-700" : "text-red-700"
+            }`}
           >
             {percentage}%
           </div>
@@ -30,7 +32,9 @@ const MarketCard = ({ name, percentage, priceChange, currentPrice, isUp }) => {
         <div className="flex flex-row items-center">
           <div className="text-gray-600 text-xs mr-2">{currentPrice}</div>
           <div
-            className={`text-xs ${isUp ? "text-green-600" : "text-red-600"}`}
+            className={`text-xs text-right ${
+              isUp ? "text-green-600" : "text-red-600"
+            }`}
           >
             {priceChange}
           </div>
