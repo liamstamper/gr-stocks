@@ -1,7 +1,32 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import glogo from "./assets/g-logo.png";
 
 const SignInPage = () => {
+  const [email, setEmail] = useState("");
+
+  useEffect(() => {
+    window.gapi.load("auth2", function () {
+      window.gapi.auth2.init({
+        client_id:
+          "589116301397-gvbvmokqvaerkepsg8hhul70n71s5ujs.apps.googleusercontent.com",
+      });
+    });
+  }, []);
+
+  const handleLogin = async () => {
+    const auth2 = window.gapi.auth2.getAuthInstance();
+    try {
+      const googleUser = await auth2.signIn();
+      console.log("User signed in:", googleUser);
+    } catch (error) {
+      console.error("Error signing in:", error);
+    }
+  };
+
+  const handleEmailSubmit = (event) => {
+    event.preventDefault();
+    handleLogin(); // Trigger Google sign-in after submitting email
+  };
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-[#F0F5F8]">
       <div className="max-w-[1040px] w-full h-[408px] bg-white p-[40px] mb-[12px] rounded-3xl shadow-sm">
@@ -17,11 +42,13 @@ const SignInPage = () => {
             Use your Google Account
           </p>
 
-          <form className="mt-8 pl-4 space-y-3">
+          <form onSubmit={handleEmailSubmit} className="mt-8 pl-4 space-y-3">
             <input
               type="email"
               autoComplete="email"
               required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="mt-20 border border-gray-500 rounded-md h-[56px] py-4 px-3 w-full placeholder:text-gray-700 placeholder:text-[16px] text-black"
               placeholder="Email or phone"
             />
