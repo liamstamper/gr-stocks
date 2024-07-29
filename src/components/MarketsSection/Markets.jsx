@@ -52,7 +52,7 @@ const Markets = () => {
           className="text-sm text-gray-800 font-semibold text-[13px] hover:underline"
           href="#"
         >
-          Stock Market News:
+          Stock Market News: <a src="">About This Project!</a>
         </a>
       </div>
       <MarketsCards />

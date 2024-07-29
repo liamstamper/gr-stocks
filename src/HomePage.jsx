@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Header from "./components/Header/Header";
 import SideBar from "./components/SideBar";
 import Markets from "./components/MarketsSection/Markets";
+import SearchBar from "./components/Header/SearchBar";
+import MainSection from "./components/MainSection/MainSection";
 
 const HomePage = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -17,6 +19,8 @@ const HomePage = () => {
       <div className="flex flex-col items-center">
         <Markets />
       </div>
+      <SearchBar />
+      <MainSection />
     </>
   );
 };
