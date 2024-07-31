@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import ExpandAllIcon from "../../assets/icons/expandall.png";
 import CollapseAllIcon from "../../assets/icons/collapseall.png";
 import MarketsCards from "./MarketsCards";
@@ -52,7 +53,7 @@ const Markets = () => {
           className="text-sm text-gray-800 font-semibold text-[13px] hover:underline"
           href="#"
         >
-          Stock Market News: <a src="">About This Project!</a>
+          Stock Market News: <Link to="/aboutpage">About This Project!</Link>
         </a>
       </div>
       <MarketsCards />
