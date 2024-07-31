@@ -13,12 +13,12 @@ const MarketInterest = ({
   return (
     <div className="flex pt-[28px]">
       <div className="bg-white w-[640px] h-[335px] p-4">
-        <h2 className="text-[18px] pb-2 flex text-gray-800 mb-1 border-b  border-gray-200">
+        <h2 className="text-[18px] flex text-gray-800 mb-1 border-b pb-2 border-gray-200">
           You may be interested in
           <img class="ml-2 mt-1 w-4 h-4" src={InfoIcon}></img>
         </h2>
         <Link to="/stockpage/Tesla Inc">
-          <li className="flex py-2 border-b border-gray-200">
+          <li className="flex py-1 border-b border-gray-200">
             <div className="text-[14px] py-[7px] pr-[150px] flex">
               <div className="text-white font-semibold pt-[3px] text-[11px] rounded-md bg-red-600 px-2 mr-2">
                 TLSA
@@ -36,7 +36,7 @@ const MarketInterest = ({
               >
                 +${priceChange}
               </div>
-              <div className="text-[15px] py-[7px] px-1 font-semibold text-left rounded-lg bg-opacity-30 ">
+              <div className="text-[15px] py-[7px] px-1 text-green-700 font-semibold text-left rounded-lg bg-opacity-30 bg-green-300">
                 {percentage}%
               </div>
             </div>
