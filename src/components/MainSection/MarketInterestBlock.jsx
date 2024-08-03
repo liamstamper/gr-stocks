@@ -4,6 +4,7 @@ import InfoIcon from "../../assets/icons/info.png";
 import AddCircle from "../../assets/icons/addcircle.png";
 import upArrowImg from "../../assets/icons/uparrow.png";
 import downArrowImg from "../../assets/icons/downarrow.png";
+import createStockIcon from "./CreateStockIcon";
 
 const MarketInterestBlock = ({
   name,
@@ -11,14 +12,13 @@ const MarketInterestBlock = ({
   priceChange,
   currentPrice,
   isUp,
+  ticker,
 }) => {
   return (
     <Link to={`/stockpage/${name}`} className="block">
       <li className="flex items-center py-3 border-b border-gray-200">
         <div className="flex-1 flex items-center">
-          <div className="text-white font-semibold text-[11px] rounded-md bg-red-600 px-2 py-1 mr-2">
-            {name.substring(0, 4)}
-          </div>
+          <div>{createStockIcon(ticker)}</div>
           <span className="text-[14px]">{name}</span>
         </div>
         <div className="flex-1 text-[15px] flex items-center justify-between">
