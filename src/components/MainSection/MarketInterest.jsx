@@ -10,6 +10,7 @@ const MarketInterest = () => {
       priceChange: "10.20",
       currentPrice: "781.00",
       isUp: true,
+      ticker: "TSLA",
     },
     {
       name: "Apple Inc",
@@ -17,6 +18,7 @@ const MarketInterest = () => {
       priceChange: "8.15",
       currentPrice: "152.10",
       isUp: false,
+      ticker: "AAPL",
     },
     {
       name: "Google LLC",
@@ -24,8 +26,24 @@ const MarketInterest = () => {
       priceChange: "5.00",
       currentPrice: "2792.35",
       isUp: true,
+      ticker: "GOOG",
     },
-    // Add more stock data as needed
+    {
+      name: "Disney LLC",
+      percentage: "10.75",
+      priceChange: "5.00",
+      currentPrice: "2792.35",
+      isUp: true,
+      ticker: "DIS",
+    },
+    {
+      name: "Amazon LLC",
+      percentage: "10.75",
+      priceChange: "5.00",
+      currentPrice: "2792.35",
+      isUp: true,
+      ticker: "AMZN",
+    },
   ];
 
   return (
@@ -43,6 +61,7 @@ const MarketInterest = () => {
             priceChange={stock.priceChange}
             currentPrice={stock.currentPrice}
             isUp={stock.isUp}
+            ticker={stock.ticker}
           />
         ))}
       </div>
