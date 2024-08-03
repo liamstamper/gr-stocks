@@ -2,18 +2,22 @@ import React from "react";
 import MarketInterest from "./MarketInterest";
 import CreatePorfolio from "./CreatePorfolio";
 import MarketTrends from "./MarketTrends";
+import BuildWatchlist from "./BuildWatchlist";
 
 const MainSection = () => {
   return (
-    <div className="flex justify-center">
-      <div className="flex flex-col">
-        <MarketInterest />
+    <>
+      <BuildWatchlist />
+      <div className="flex justify-center">
+        <div className="flex flex-col">
+          <MarketInterest />
+        </div>
+        <div className="flex flex-col">
+          <CreatePorfolio />
+          <MarketTrends />
+        </div>
       </div>
-      <div className="flex flex-col">
-        <CreatePorfolio />
-        <MarketTrends />
-      </div>
-    </div>
+    </>
   );
 };
 
