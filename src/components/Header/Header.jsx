@@ -26,7 +26,7 @@ const Header = ({ toggleSidebar }) => {
   return (
     <header
       className={`sticky top-0 z-50 h-[65px] pr-[20px] bg-white border-b border-gray-100 flex justify-between items-center mx-auto w-full px-2 transition-shadow duration-300 ${
-        isScrolled ? "shadow-md shadow-gray-400" : ""
+        isScrolled ? "shadow-md shadow-gray-300" : ""
       }`}
     >
       <div className="flex items-center">
