@@ -31,10 +31,10 @@ const Header = ({ toggleSidebar }) => {
     >
       <div className="flex items-center">
         <button
-          className="hover:rounded-full hover:bg-gray-100 mr-2 p-3 shadow-gray-400 transition-all duration-150"
+          className="hover:rounded-full hover:bg-gray-100 mr-1 p-3 shadow-gray-400 transition-all duration-150"
           onClick={toggleSidebar}
         >
-          <img src={Hamburger} className="w-6 h-6" alt="Menu" />
+          <img src={Hamburger} className="ml-1 w-6 h-6" alt="Menu" />
         </button>
         <Branding />
       </div>
