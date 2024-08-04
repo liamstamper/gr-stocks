@@ -37,12 +37,12 @@ const MarketInterest = () => {
       ticker: "DIS",
     },
     {
-      name: "Amazon LLC",
+      name: "Nasdaq-100",
       percentage: "10.75",
       priceChange: "5.00",
       currentPrice: "2792.35",
       isUp: true,
-      ticker: "AMZN",
+      ticker: "INDEX",
     },
   ];
 
