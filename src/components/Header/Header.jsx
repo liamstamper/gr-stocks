@@ -11,7 +11,7 @@ const Header = ({ toggleSidebar }) => {
   const location = useLocation();
   const isStockPage = location.pathname.startsWith("/stock");
   return (
-    <header className="h-[65px] pr-[20px] bg-white border bottom-1 border-gray-50 flex justify-between items-center mx-auto w-full px-2">
+    <header className="h-[65px] pr-[20px] bg-white border-b border-gray-100 flex justify-between items-center mx-auto w-full px-2">
       <div className="flex items-center">
         <button
           className="hover:rounded-full hover:bg-gray-100 mr-2 p-3 shadow-gray-400 transition-all duration-150"
