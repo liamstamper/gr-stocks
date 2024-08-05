@@ -49,7 +49,7 @@ const MarketInterest = () => {
   return (
     <div className="flex pt-[28px]">
       <div className="bg-white w-[660px] h-[335px]">
-        <h2 className="text-[18px] flex items-center text-gray-800 mb-1 border-b pb-2 border-gray-200">
+        <h2 className="text-[18px] flex items-center text-gray-800 pb-2 border-b border-gray-200">
           You may be interested in
           <img className="ml-2 mt-1 w-4 h-4" src={InfoIcon} alt="Info Icon" />
         </h2>
