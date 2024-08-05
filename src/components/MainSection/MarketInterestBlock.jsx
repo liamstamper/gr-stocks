@@ -16,7 +16,7 @@ const MarketInterestBlock = ({
 }) => {
   return (
     <Link to={`/stockpage/${name}`} className="block">
-      <li className="flex items-center py-3 border-b border-gray-200">
+      <li className="flex items-center py-[8px] border-b border-gray-200 hover:bg-gray-50">
         <div className="flex-1 flex items-center">
           <div>{createStockIcon(ticker)}</div>
           <span className="text-[14px]">{name}</span>
