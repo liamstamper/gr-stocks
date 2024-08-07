@@ -7,8 +7,12 @@ const Branding = () => {
     <div className="flex items-center">
       {" "}
       <Link to="/" className="flex">
-        <img alt="Logo" className="w-[75px] h-6 mr-[4px] mt-[7px]" src={logo} />
-        <span className="text-[21px] mt-[2px] font-roboto text-slate-500">
+        <img
+          alt="Logo"
+          className="w-[75px] h-[25px] mr-[4px] mt-[6px]"
+          src={logo}
+        />
+        <span className="text-[21px] mt-[1px] font-roboto text-slate-500">
           Finance
         </span>
       </Link>
