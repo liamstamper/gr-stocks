@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import Branding from "./Header/Branding";
-import HomeIcon from "../../dist/fav.png";
+import HomeIcon from "../assets/icons/home.png";
 import MarketTrendsIcon from "../assets/icons/markettrends.png";
 import PlusIcon from "../assets/icons/plus.png";
 import UpArrowIcon from "../assets/icons/uparrow.png";
