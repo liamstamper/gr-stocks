@@ -8,7 +8,7 @@ import CryptoIcon from "../../assets/icons/market-trend/crypto.png";
 
 const MarketTrends = () => {
   return (
-    <div className="w-[360px] h-[175px] ml-[10px] mt-[25px] border border-gray-200 rounded-xl justify-center text-center p-[15px]">
+    <div className="w-[360px] h-[175px] ml-[10px] mt-[15px] border border-gray-200 rounded-xl justify-center text-center p-[15px]">
       <div
         className="text-gray-900 text-left text-[17px] pb-[10px]"
         style={{ fontFamily: "Roboto, sans-serif", fontWeight: 400 }}
