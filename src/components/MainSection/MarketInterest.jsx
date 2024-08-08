@@ -62,6 +62,7 @@ const MarketInterest = () => {
             currentPrice={stock.currentPrice}
             isUp={stock.isUp}
             ticker={stock.ticker}
+            hasBorder={index < stocks.length - 1}
           />
         ))}
       </div>
