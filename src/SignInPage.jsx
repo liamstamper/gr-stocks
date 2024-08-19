@@ -1,32 +1,35 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import glogo from "./assets/g-logo.png";
+import { googleLogout, useGoogleLogin } from '@react-oauth/google';
 
 const SignInPage = () => {
   const [email, setEmail] = useState("");
-
-  useEffect(() => {
-    window.gapi.load("auth2", function () {
-      window.gapi.auth2.init({
-        client_id:
-          "589116301397-gvbvmokqvaerkepsg8hhul70n71s5ujs.apps.googleusercontent.com",
-      });
-    });
-  }, []);
-
-  const handleLogin = async () => {
-    const auth2 = window.gapi.auth2.getAuthInstance();
-    try {
-      const googleUser = await auth2.signIn();
-      console.log("User signed in:", googleUser);
-    } catch (error) {
-      console.error("Error signing in:", error);
-    }
-  };
+  const [isEmailValid, setIsEmailValid] = useState(false);
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  const navigate = useNavigate();
 
   const handleEmailSubmit = (event) => {
     event.preventDefault();
-    handleLogin(); // Trigger Google sign-in after submitting email
+    const isValidEmail = validateEmail(email);
+    setIsEmailValid(isValidEmail);
+    setIsFormSubmitted(true);
+    if (isValidEmail) {
+      login();
+    }
   };
+
+  const login = useGoogleLogin({
+    onSuccess: (response) => console.log(response),
+    onError: (error) => console.log(error),
+    flow: 'auth-code',
+  });
+
+  const validateEmail = (email) => {
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return emailRegex.test(email);
+  };
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-[#F0F5F8]">
       <div className="max-w-[1040px] w-full h-[408px] bg-white p-[40px] mb-[12px] rounded-3xl shadow-sm">
