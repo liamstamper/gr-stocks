@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import ListIcon from "../../assets/icons/list.png";
+import SignInButton from "../Header/SignInButton";
 
 const BuildWatchlist = () => {
   const [user, setUser] = useState(null);
@@ -37,12 +38,7 @@ const BuildWatchlist = () => {
           </div>
         </div>
         <div className="ml-auto pr-[15px]">
-          <button
-            className="bg-blue-500 text-white py-2 px-4 rounded-full"
-            onClick={handleSignInClick}
-          >
-            Sign In
-          </button>
+          <SignInButton />
         </div>
       </div>
     </div>
