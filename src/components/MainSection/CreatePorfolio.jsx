@@ -1,6 +1,20 @@
+import React, { useState } from "react";
 import PlusIcon from "../../assets/icons/plus.png";
+import CreatePortfolioModal from "./CreatePortfolioModal";
 
-const CreatePorfolio = () => {
+const CreatePortfolio = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Function to open the modal
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  // Function to close the modal
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div className="w-[360px] h-[120px] ml-[10px] mt-[45px] border border-gray-200 rounded-xl justify-center text-center p-[15px]">
       <div
@@ -9,12 +23,18 @@ const CreatePorfolio = () => {
       >
         Create a portfolio to view your investments in one place
       </div>
-      <button className="mt-2 flex items-center justify-center space-x-2 rounded-full text-[14px] text-blue-600 w-full py-2 border border-gray-200">
+      <button
+        className="mt-2 flex items-center justify-center space-x-2 rounded-full text-[14px] text-blue-600 w-full py-2 border border-gray-200"
+        onClick={openModal}
+      >
         <img src={PlusIcon} alt="Add" className="w-5 h-5" />
         <span>New Portfolio</span>
       </button>
+
+      {/* Modal for creating portfolio */}
+      <CreatePortfolioModal isOpen={isModalOpen} onClose={closeModal} />
     </div>
   );
 };
 
-export default CreatePorfolio;
+export default CreatePortfolio;
