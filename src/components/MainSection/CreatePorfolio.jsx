@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PlusIcon from "../../assets/icons/plus.png";
 import CreatePortfolioModal from "./CreatePortfolioModal";
+import ChartIcon from "../../assets/icons/chart.png";
 
 const CreatePortfolio = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -18,9 +19,14 @@ const CreatePortfolio = () => {
   return (
     <div className="w-[360px] h-[120px] ml-[10px] mt-[45px] border border-gray-200 rounded-xl justify-center text-center p-[15px]">
       <div
-        className="text-gray-500 text-[14px] font-semibold"
+        className="text-gray-500 flex flex-row text-[14px]  text-left font-semibold"
         style={{ fontFamily: "Roboto, sans-serif", fontWeight: 400 }}
       >
+        <img
+          src={ChartIcon}
+          alt="Chart"
+          className="w-10 h-10 bg-blue-300 bg-opacity-20 rounded-lg mr-3 p-2"
+        ></img>
         Create a portfolio to view your investments in one place
       </div>
       <button
