@@ -27,7 +27,7 @@ const Markets = () => {
     <div className="max-w-[1025px] flex flex-col w-full h-[90px] pt-[16px]">
       <div className="flex items-center space-x-2 text-xs">
         <button
-          className="uppercase text-gray-600 flex tracking-wider font-semibold text-[11px]"
+          className="uppercase text-gray-600 flex tracking-wider font-semibold text-[8px] lg:text-[11px]"
           onClick={handleExpandClick}
         >
           <img

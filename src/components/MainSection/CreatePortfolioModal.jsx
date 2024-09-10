@@ -1,12 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 const CreatePortfolioModal = ({ isOpen, onClose }) => {
   const [portfolioName, setPortfolioName] = useState("");
   const [isPlayground, setIsPlayground] = useState(false);
   const navigate = useNavigate();
+  const [user, setUser] = useState(null);
 
-  // Handle portfolio creation (implement logic as needed)
+  useEffect(() => {
+    const auth = getAuth();
+
+    // Check if user is signed in
+    onAuthStateChanged(auth, (currentUser) => {
+      if (currentUser) {
+        setUser(currentUser); // User is signed in
+      } else {
+        // User not signed in, redirect to sign-in page
+        navigate("/signinpage", { state: { from: "portfolio" } }); // Redirect to sign-in with reference to portfolio creation
+      }
+    });
+  }, [navigate]);
+
   const handleSave = () => {
     if (!portfolioName.trim()) {
       alert("Portfolio name cannot be empty.");
@@ -17,8 +32,8 @@ const CreatePortfolioModal = ({ isOpen, onClose }) => {
     onClose(); // Close the modal after saving
   };
 
-  // Render only if the modal is open
-  if (!isOpen) return null;
+  // Render only if the modal is open and user is signed in
+  if (!isOpen || !user) return null;
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-30 flex justify-center items-center z-50">
