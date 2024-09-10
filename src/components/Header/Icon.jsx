@@ -46,7 +46,7 @@ const Icon = ({ user }) => {
         />
       </a>
       {isOpen && (
-        <div className="absolute top-10 right-0 w-[380px] bg-[#E8EFF6] shadow-lg border border-gray-200 rounded-3xl p-4 z-50 flex flex-col items-center text-center">
+        <div className="absolute top-10 right-0 w-[400px] bg-[#E8EFF6] shadow-lg border border-gray-200 rounded-3xl p-4 z-50 flex flex-col items-center text-center">
           <p className="text-black mb-10 text-[13px]">
             {user?.email || "User Email"}
           </p>
@@ -74,12 +74,12 @@ const Icon = ({ user }) => {
 
           {/* More Accounts Section */}
           <div className="mt-4 pt-4">
-            <p className="bg-white py-4 px-20 flex flex-row rounded-t-full text-sm text-black hover:bg-gray-200">
+            <p className="bg-white py-4 px-28 flex flex-row rounded-t-full text-sm text-black hover:bg-gray-200">
               Hide more accounts
             </p>
             <button
               onClick={handleSignOut}
-              className="flex flex-row pl-[45px] w-full text-sm bg-white py-4 px-20 mt-[2px] hover:bg-gray-200"
+              className="flex flex-row pl-[45px] w-full text-sm bg-white py-2 px-20 mt-[2px] hover:bg-gray-200"
             >
               <img
                 className="w-8 h-8 rounded-full"
