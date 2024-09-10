@@ -12,7 +12,7 @@ const Branding = () => {
           className="w-[75px] h-[25px] mr-[4px] mt-[6px]"
           src={logo}
         />
-        <span className="text-[21px] mt-[1px] font-roboto text-slate-500">
+        <span className="text-[21px] mt-[3px] font-roboto text-slate-500">
           Finance
         </span>
       </Link>
