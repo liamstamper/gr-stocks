@@ -4,11 +4,11 @@ import downArrowImg from "../../assets/icons/downarrow.png";
 
 const MarketCard = ({ name, percentage, priceChange, currentPrice, isUp }) => {
   return (
-    <div className="bg-white border border-gray-200 rounded-lg p-[6px] flex flex-row items-center">
+    <div className="bg-white border border-gray-200 rounded-lg lg:p-[6px] md:p-[3px] sm:p-0 flex flex-row items-center">
       <div
         className={`p-2 rounded-lg bg-opacity-50 ${
           isUp ? "bg-green-200" : "bg-red-200"
-        } self-center flex justify-center items-center`}
+        } self-center flex justify-center items-center `}
       >
         <img
           src={isUp ? upArrowImg : downArrowImg}
