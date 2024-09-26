@@ -6,7 +6,7 @@ import SearchBar from "./components/Header/SearchBar";
 import MainSection from "./components/MainSection/MainSection";
 
 const HomePage = () => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isSidebarOpen, IsSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);

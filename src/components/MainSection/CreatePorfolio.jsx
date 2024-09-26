@@ -17,7 +17,7 @@ const CreatePortfolio = () => {
   };
 
   return (
-    <div className="w-[360px] h-[120px] ml-[10px] mt-[45px] border border-gray-200 rounded-xl justify-center text-center p-[15px]">
+    <div className="max-w-[360px] w-full ml-[10px] mt-[45px] border border-gray-200 rounded-xl justify-center text-center p-[15px]">
       <div
         className="text-gray-500 flex flex-row text-[14px]  text-left font-semibold"
         style={{ fontFamily: "Roboto, sans-serif", fontWeight: 400 }}
